@@ -1,7 +1,7 @@
 package n1exercici2;
 
 public class TreballadorPresencial extends Treballador{
-	
+
 	private static int benzina=100;
 
 	public TreballadorPresencial(String nom, String cognom, int preuHora) {
@@ -10,7 +10,7 @@ public class TreballadorPresencial extends Treballador{
 	}
 
 	// Getters&Setters
-	
+
 	/**
 	 * @return the benzina
 	 */
@@ -32,7 +32,7 @@ public class TreballadorPresencial extends Treballador{
 		// TODO Auto-generated method stub
 		return super.metodeCalcularSou(horesTreballades)+benzina;
 	}
-	
+
 	@Deprecated
 	public void obsoleteMethodTreballadorPresencial() {
 		System.out.println("javadoc tag is an ad hoc annotation indicating that the method should no longer be used. ");;
@@ -43,7 +43,7 @@ public class TreballadorPresencial extends Treballador{
 		return super.toString();
 	}
 
-	
-	
-		
+
+
+
 }
