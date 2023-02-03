@@ -2,9 +2,8 @@ package n1exercici2;
 
 public class Principal {
 
-	@SuppressWarnings("deprecation")
+	//@SuppressWarnings("deprecation")                 // create method to avoid put to all the class main (visually wrong )
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		/*
 		 * Afegeix a les classes filles alguns mètodes obsolets (deprecated), i utilitza l’anotació corresponent. 
@@ -20,15 +19,20 @@ public class Principal {
 		System.out.println(myTreballadorOnline.toString());
 
 		System.out.println();
-
-
-		myTreballadorPresencial.obsoleteMethodTreballadorPresencial();
-		myTreballadorOnline.obsoleteMethodTreballadorOnline();
-
-
-		//
-
-
+															//myTreballadorPresencial.obsoleteMethodTreballadorPresencial();
+															//myTreballadorOnline.obsoleteMethodTreballadorOnline();
+		useObsolMethoPre(myTreballadorPresencial);   		// create method to avoid put to all the class main (visually wrong )
+		useObsolMethoOnli(myTreballadorOnline);
 	}
+	
+	 @SuppressWarnings("deprecation")
+	 public static void useObsolMethoPre(TreballadorPresencial myTreballadorPresencial) {
+		 myTreballadorPresencial.obsoleteMethodTreballadorPresencial();
+	 }
+	 
+	 @SuppressWarnings("deprecation")
+	 public static void useObsolMethoOnli(TreballadorOnline myTreballadorOnline) {
+		 myTreballadorOnline.obsoleteMethodTreballadorOnline();
+	 }
 
 }

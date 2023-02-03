@@ -2,7 +2,7 @@ package n2exercici1;
 
 import java.io.Serializable;
 	
-@AnotacionPersonalizadaSerializableJson(ruta ="C:\\Users\\azoli\\eclipse-workspace\\Tasca S1.07- Annotations\\src\\n2exercici1\\ordenador.json")
+@JsonSerializableAP(ruta ="C:\\Users\\azoli\\eclipse-workspace\\Tasca S1.07- Annotations\\src\\n2exercici1\\ordenador.json")
 @SuppressWarnings("serial")
 public class Ordinador implements Serializable { //"implements" the Serializable interface
 	private String marca;

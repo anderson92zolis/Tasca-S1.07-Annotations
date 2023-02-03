@@ -1,37 +1,62 @@
 package n2exercici1;
 
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException { // lanzar throws ClassNotFoundException cuando se trabaje con try/catch
+	public static void main(String[] args) {
 
-	Ordinador ordenador= new Ordinador("MicrosoftSurface","1000 gb");
-	serializeOrdinador(ordenador);
+		// First Laptop
+
+		Ordinador newLaptop1 = new Ordinador("MicrosoftSurface", "1000 gb");
+		JSONObject newLaptopJson1 = new JSONObject();
+		newLaptopJson1.put("Laptop1", newLaptop1);
+
+		// Second Laptop
+
+		Ordinador newLaptop2 = new Ordinador("MicrosoftSurface", "500 gb");
+		JSONObject newLaptopJson2 = new JSONObject();
+		newLaptopJson2.put("Laptop2", newLaptop2);
 		
+		// JSONArray
+
+		JSONArray laptopList = new JSONArray();
+		laptopList.add(newLaptopJson1);
+		laptopList.add(newLaptopJson2);
+		
+		JsonSerializableAP annotation =  newLaptop1.getClass().getAnnotation(JsonSerializableAP.class);
+
+		serializeOrdinador(laptopList, annotation); 					//given the JsonArray and interface
 	}
+
+	public static void serializeOrdinador(JSONArray laptopList,JsonSerializableAP annotation) {
+		
+		FileWriter file = null;
 	
-	public static void serializeOrdinador(Ordinador ordenador) {
-		
-		AnotacionPersonalizadaSerializableJson annotation = ordenador.getClass().getAnnotation(AnotacionPersonalizadaSerializableJson.class);
-		
-		String ruta= annotation.ruta();
-		
-		System.out.println("The name of file to generate is : " + ruta  );
-		
 		try {
 			
-			//output
-			ObjectOutputStream escribiendo_Fichero= new ObjectOutputStream(new FileOutputStream(ruta));
-			escribiendo_Fichero.writeObject(ordenador); 		
-			escribiendo_Fichero.close();
-			}
-		
-			catch(IOException e) {
-			  e.getMessage();
+			String path = annotation.ruta();
+																// Constructs a FileWriter given a file name
+			file = new FileWriter(path);
+			file.write(laptopList.toJSONString());
+
+			System.out.println("Successfully Copied JSON Object to File... \n"+ laptopList);
+
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				file.flush();
+				file.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 
+	}
 }

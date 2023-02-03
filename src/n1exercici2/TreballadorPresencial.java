@@ -6,21 +6,16 @@ public class TreballadorPresencial extends Treballador{
 
 	public TreballadorPresencial(String nom, String cognom, int preuHora) {
 		super(nom, cognom, preuHora);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Getters&Setters
 
-	/**
-	 * @return the benzina
-	 */
+	
 	public static int getBenzina() {
 		return benzina;
 	}
 
-	/**
-	 * @param benzina the benzina to set
-	 */
+	
 	public static void setBenzina(int benzina) {
 		TreballadorPresencial.benzina = benzina;
 	}
@@ -35,12 +30,12 @@ public class TreballadorPresencial extends Treballador{
 
 	@Deprecated
 	public void obsoleteMethodTreballadorPresencial() {
-		System.out.println("javadoc tag is an ad hoc annotation indicating that the method should no longer be used. ");;
+		System.out.println("javadoc tag is an ad hoc annotation indicating that the method should no longer be used. iuuu ");;
 		}
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString();
+		return super.toString() + " + benzina: " + benzina;
 	}
 
 

@@ -15,44 +15,30 @@ public class Treballador {
 	
 	//Getters&setters
 	
-	/**
-	 * @return the nom
-	 */
 	public String getNom() {
 		return nom;
 	}
 	
-	/**
-	 * @return the cognom
-	 */
 	public String getCognom() {
 		return cognom;
 	}
 	
-	/**
-	 * @return the preuHora
-	 */
+	
 	public int getPreuHora() {
 		return preuHora;
 	}
 
-	/**
-	 * @param nom the nom to set
-	 */
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-	/**
-	 * @param cognom the cognom to set
-	 */
+
 	public void setCognom(String cognom) {
 		this.cognom = cognom;
 	}
 
-	/**
-	 * @param preuHora the preuHora to set
-	 */
+	
 	public void setPreuHora(int preuHora) {
 		this.preuHora = preuHora;
 	}
