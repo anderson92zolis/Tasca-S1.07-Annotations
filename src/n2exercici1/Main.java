@@ -28,17 +28,16 @@ public class Main {
 		laptopList.add(newLaptopJson2);
 		
 		JsonSerializableAP annotation =  newLaptop1.getClass().getAnnotation(JsonSerializableAP.class);
-
-		serializeOrdinador(laptopList, annotation); 					//given the JsonArray and interface
+		String path = annotation.ruta();
+		serializeOrdinador(laptopList, path); 					//given the JsonArray and interface
+		
 	}
 
-	public static void serializeOrdinador(JSONArray laptopList,JsonSerializableAP annotation) {
+	public static void serializeOrdinador(JSONArray laptopList,String path) {
 		
 		FileWriter file = null;
 	
 		try {
-			
-			String path = annotation.ruta();
 																// Constructs a FileWriter given a file name
 			file = new FileWriter(path);
 			file.write(laptopList.toJSONString());
